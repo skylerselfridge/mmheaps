@@ -100,23 +100,10 @@ impl<T> MinHeap<T> {
     }
 }
 
-impl<T: Ord> IntoIterator for MinHeap<T> {
-    type Item = T;
-    type IntoIter = IntoIter<T>;
-
-    fn into_iter(self) -> Self::IntoIter {
-        IntoIter { heap: self }
-    }
-}
-
-pub struct IntoIter<T: Ord> {
-    heap: MinHeap<T>,
-}
-
-impl<T: Ord> Iterator for IntoIter<T> {
+impl<T> Iterator for MinHeap<T> {
     type Item = T;
 
     fn next(&mut self) -> Option<Self::Item> {
-        self.heap.pop()
+        self.pop()
     }
 }

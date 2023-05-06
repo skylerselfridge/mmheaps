@@ -63,7 +63,7 @@ impl<T> MinHeap<T> {
     fn bubble_up(&mut self, mut index: usize) {
         while index > 0 {
             let parent_index = (index - 1) / 2;
-            if self.heap[index] > self.heap[parent_index] {
+            if self.heap[index] < self.heap[parent_index] {
                 self.heap.swap(index, parent_index);
                 index = parent_index;
             } else {
@@ -79,13 +79,13 @@ impl<T> MinHeap<T> {
             let mut smallest_index = index;
 
             if left_child_index < self.heap.len()
-                && self.heap[left_child_index] > self.heap[smallest_index]
+                && self.heap[left_child_index] < self.heap[smallest_index]
             {
                 smallest_index = left_child_index;
             }
 
             if right_child_index < self.heap.len()
-                && self.heap[right_child_index] > self.heap[smallest_index]
+                && self.heap[right_child_index] < self.heap[smallest_index]
             {
                 smallest_index = right_child_index;
             }

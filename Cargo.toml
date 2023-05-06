@@ -1,6 +1,6 @@
 [package]
 name = "mmheaps"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 author = ["Skyler Selfridge <Skyler.Selfridge@gmail.com"]
 description = "Simple implementation of iterable min and max heaps"
